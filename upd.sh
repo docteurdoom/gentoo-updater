@@ -24,7 +24,7 @@ checks () {
 	if [ "$(id -u)" -eq 0 ]
 		then
 		ebegin "Running as root" && eend
-		switch
+#		switch
 		else
 		eend "Please run this script as root user. Exiting."
 		exit
@@ -42,6 +42,7 @@ checks () {
 sync () {
 	emerge --sync
 	eix-update
+	eix-remote update
 }
 
 update () {
